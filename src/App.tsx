@@ -7,7 +7,7 @@ import RandomWords from "./pages/RandomWords";
 
 function App() {
   return (
-    <>
+    <div className="min-h-screen bg-gradient-to-b from-gray-700 via-gray-800 to-gray-900 text-white">
       <Router>
         <NavBar />
         <Routes>
@@ -17,7 +17,7 @@ function App() {
           <Route path="/about" element={<About />} />
         </Routes>
       </Router>
-    </>
+    </div>
   );
 }
 
