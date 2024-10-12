@@ -14,15 +14,9 @@ const ThemeSwitcher = () => {
       <button
         id="theme-toggle"
         onClick={toggleTheme}
-        className={`w-12 h-6 flex items-center rounded-full p-1 transition-colors duration-300 ${
-          theme === "dark" ? "bg-blue-700" : "bg-gray-300"
-        }`}
+        className="w-12 h-6 flex items-center rounded-full p-1 transition-colors duration-300 bg-gray-300 dark:bg-blue-700 "
       >
-        <div
-          className={`w-5 h-5 rounded-full bg-white shadow-md transform transition-transform duration-300 ${
-            theme === "dark" ? "translate-x-6" : ""
-          }`}
-        />
+        <div className="w-5 h-5 rounded-full bg-white shadow-md transform transition-transform duration-300 dark:translate-x-6" />
       </button>
     </div>
   );
