@@ -1,3 +1,4 @@
+import Loading from "../components/Loading";
 import ResultCard from "../components/ResultCard";
 import useApiCall from "../hooks/useApiCall";
 
@@ -9,10 +10,10 @@ const RandomWords = () => {
   };
 
   return (
-    <div>
+    <div className="flex-grow relative">
       <h1>API Data</h1>
       <button onClick={handleClickApiCall}>get a random word</button>
-      {loading && <p>Loading...</p>}
+      {loading && <Loading />}
       {error && <p>Error: {error}</p>}
       {data && (
         <div>

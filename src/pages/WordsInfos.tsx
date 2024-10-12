@@ -16,7 +16,7 @@ const WordsInfos = () => {
     fetchData(`https://wordsapiv1.p.rapidapi.com/words/${word}`);
   };
   return (
-    <div>
+    <div className="flex-grow relative">
       <form action="">
         <label htmlFor="search-word">
           <input
