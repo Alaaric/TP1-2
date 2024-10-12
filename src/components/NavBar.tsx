@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/dictionary.png";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 const NavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -14,16 +15,12 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="bg-gray-800 p-4 relative z-10">
-      <div className="container mx-auto flex justify-between items-center">
+    <nav className="bg-gray-800 relative z-10">
+      <div className="container flex justify-between items-center h-20 mx-0">
         <Link to="/" className="rounded-full">
-          <img
-            src={logo}
-            alt="Dictionnary logo"
-            className="max-w-10 h-10 rounded-full"
-          />
+          <img src={logo} alt="Dictionnary logo" className="max-w-20 h-20" />
         </Link>
-        <ul className="hidden md:flex space-x-4">
+        <ul className="hidden md:flex space-x-10">
           <li>
             <Link to="/" className="text-gray-300 hover:text-white">
               Home
@@ -45,6 +42,7 @@ const NavBar = () => {
             </Link>
           </li>
         </ul>
+        <ThemeSwitcher />
         <div className="md:hidden">
           <button
             onClick={handleMenuToggle}
