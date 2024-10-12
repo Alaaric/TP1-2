@@ -50,7 +50,7 @@ const NavBar = () => {
           </li>
           <li>
             <Link to="/randomwords" className="text-gray-900 dark:text-white">
-              Randoms Words
+              Random Words
             </Link>
           </li>
           <li>
