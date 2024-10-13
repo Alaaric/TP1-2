@@ -8,7 +8,7 @@ interface ApiData {
   word: string;
 }
 
-const useApiCall = () => {
+export const useApiCall = () => {
   const [data, setData] = useState<ApiData | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -22,7 +22,9 @@ const useApiCall = () => {
         },
       });
       if (!response.ok) {
-        throw new Error("Failed to fetch data");
+        throw new Error(
+          "No matching results. Are you sure this is an English word?"
+        );
       }
       const result: ApiData = await response.json();
       setData(result);
@@ -31,7 +33,7 @@ const useApiCall = () => {
       if (err instanceof Error) {
         setError(err.message);
       } else {
-        setError("An unknown error occurred");
+        setError("An unknown error occurred... sorry");
       }
     } finally {
       setLoading(false);
